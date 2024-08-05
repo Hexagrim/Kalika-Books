@@ -5,29 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Collection</title>
     <style>
-        .iframe-container {
-            width: 100%; /* Container takes full width */
-            position: relative;
-            padding-top: 56.25%; /* 16:9 Aspect Ratio */
-            height: 0;
-            overflow: hidden; /* Hide any overflow */
-        }
-
-        .iframe-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
         body {
             background-color: rgb(160, 160, 160);
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 0;
             padding: 0;
+        }
+
+        h1 {
+            margin-top: 20px;
         }
 
         .container {
@@ -62,28 +49,55 @@
             color: inherit;
         }
 
-        h1 {
+        /* Iframe container for landscape and portrait modes */
+        .iframe-container {
+            width: 100%;
+            position: relative;
+            padding-top: 56.25%; /* Default 16:9 aspect ratio */
+            height: 0;
             margin-top: 20px;
+        }
+
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive adjustments */
+        @media (orientation: portrait) {
+            .iframe-container {
+                padding-top: 177.78%; /* 9:16 aspect ratio for portrait */
+            }
+        }
+
+        @media (orientation: landscape) {
+            .iframe-container {
+                padding-top: 56.25%; /* 16:9 aspect ratio for landscape */
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Kalika Books-By Aayush Parajuli </h1>
-    
+    <h1>Kalika Books-By Aayush Parajuli</h1>
+
     <div class="container">
         <div class="book-box">
             <a href="Nepali.pdf">
-                <img src="book1.png" alt="Nepali">
+                <img src="book1.png" alt="Nepali" width="150" height="200">
             </a>
         </div>
         <div class="book-box">
             <a href="Science1.pdf">
-                <img src="book2.png" alt="Science Part 1">
+                <img src="book2.png" alt="Science Part 1" width="150" height="200">
             </a>
         </div>
         <div class="book-box">
             <a href="Science2.pdf">
-                <img src="book3.png" alt="Science Part 2">
+                <img src="book3.png" alt="Science Part 2(from chp 9)">
             </a>
         </div>
         <div class="book-box">
@@ -115,13 +129,18 @@
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094887750950866" crossorigin="anonymous"></script>
     <!-- Ad -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1094887750950866" data-ad-slot="5468024769" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <ins class="adsbygoogle"
+        style="display:block"
+        data-ad-client="ca-pub-1094887750950866"
+        data-ad-slot="5468024769"
+        data-ad-format="auto"
+        data-full-width-responsive="true"></ins>
     <script>
         (adsbygoogle = window.adsbygoogle || []).push({});
     </script>
 
     <div class="iframe-container">
-        <iframe src="https://chatbot-ai-app.vercel.app"></iframe>
+        <iframe src="https://chatbot-ai-app.vercel.app" allowfullscreen></iframe>
     </div>
 </body>
 </html>
