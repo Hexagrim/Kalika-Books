@@ -1,1 +1,143 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Hub</title>
+    <style>
+        body {
+            background-color: #181818;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header, .footer {
+            background: #000;
+            padding: 20px;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            color: #ff9900;
+        }
+        .hero {
+            background: #222;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #ff9900;
+        }
+        .container {
+            display: flex;
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            background: #111;
+            padding: 15px;
+            border-radius: 10px;
+        }
+        .video-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .video-player {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        .playlist {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .video-thumbnail {
+            width: 120px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .video-thumbnail:hover {
+            transform: scale(1.05);
+        }
+        .ad-section {
+            width: 250px;
+            height: 400px;
+            border-radius: 10px;
+            margin-left: 20px;
+        }
+        .ad-section img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+        .popup {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+            
+        }
+        .popup-content {
+            background: #fff;
+            color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            max-width: 400px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <p>Welcome to Video Hub!</p>
+            <button onclick="closePopup()">Enter</button>
+        </div>
+    </div>
+    <div class="header">Video Hub</div>
+    <div class="hero">Trending Videos</div>
+    <div class="container">
+        <div class="sidebar">Categories</div>
+        <div class="video-section">
+            <iframe class="video-player" id="main-video" src="https://www.youtube.com/embed/M1dPzyEP1Rw" frameborder="0" allowfullscreen></iframe>
+            <div class="playlist">
+                <img class="video-thumbnail" src="https://img.youtube.com/vi/XVg6XjbcwoA/0.jpg" alt="Video 1" onclick="changeVideo('XVg6XjbcwoA')">
+                <img class="video-thumbnail" src="https://img.youtube.com/vi/M1dPzyEP1Rw/0.jpg" alt="Video 2" onclick="changeVideo('M1dPzyEP1Rw')">
+                <img class="video-thumbnail" src="https://img.youtube.com/vi/pdy8q1cGm9M/0.jpg" alt="Video 3" onclick="changeVideo('pdy8q1cGm9M')">
+            </div>
+        </div>
+        <div class="ad-section">
+            <img src="https://i.imgur.com/cmhbbBf.png" alt="Ad">
+        </div>
+    </div>
+    <div class="footer">&copy; 2025 Video Hub</div>
+    <script>
+        function changeVideo(videoId) {
+            document.getElementById('main-video').src = `https://www.youtube.com/embed/${videoId}`;
+        }
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+    </script>
+</body>
+</html>
