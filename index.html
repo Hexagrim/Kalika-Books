@@ -50,6 +50,43 @@
             color: inherit;
         }
 
+        /* Center the code input box with the same background color */
+        .code-box {
+            margin-top: 20px;
+            padding: 10px;
+            width: 200px;
+            background-color: rgb(20, 20, 20); /* Same as the body background */
+            border-radius: 8px;
+            border: 2px solid #757474;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .code-box input {
+            width: 80%;
+            padding: 5px;
+            border: 1px solid #757474;
+            border-radius: 5px;
+            background-color: #222;
+            color: #f0f0f0;
+            font-size: 16px;
+        }
+
+        .code-box button {
+            margin-top: 10px;
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .code-box button:hover {
+            background-color: #45a049;
+        }
+
         /* Iframe container for landscape and portrait modes */
         .iframe-container {
             width: 100%;
@@ -142,6 +179,24 @@
             </a>
         </div>
     </div>
+
+    <!-- Centered code box -->
+    <div class="code-box">
+        <label for="codeInput">Enter 4-Digit Code:</label><br>
+        <input type="text" id="codeInput" maxlength="4" placeholder="e.g., 1234">
+        <button onclick="checkCode()">Submit</button>
+    </div>
+
+    <script>
+        function checkCode() {
+            var code = document.getElementById("codeInput").value;
+            if (code === "1221") { // Replace 1234 with your desired code
+                window.location.href = "video.html"; // Redirect to the desired page
+            } else {
+                alert("Incorrect code! Please try again.");
+            }
+        }
+    </script>
 
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1094887750950866" crossorigin="anonymous"></script>
     <!-- Ad -->
